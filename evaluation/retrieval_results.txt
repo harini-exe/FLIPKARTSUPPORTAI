@@ -1,0 +1,36 @@
+Retrieval Evaluation
+
+Evaluation metric: document-level Precision@3 and Recall@3
+
+Query 1:
+Retrieved: ['doc_01', 'doc_03', 'doc_02']
+Relevant: ['doc_01']
+Precision@3: 0.333
+Recall@3: 1.0
+
+Query 2:
+Retrieved: ['doc_04', 'doc_05', 'doc_11']
+Relevant: ['doc_04']
+Precision@3: 0.333
+Recall@3: 1.0
+
+Query 3:
+Retrieved: ['doc_06', 'doc_07']
+Relevant: ['doc_06']
+Precision@3: 0.5
+Recall@3: 1.0
+
+Query 4:
+Retrieved: ['doc_08', 'doc_03']
+Relevant: ['doc_08']
+Precision@3: 0.5
+Recall@3: 1.0
+
+Query 5:
+Retrieved: ['doc_10', 'doc_02', 'doc_11']
+Relevant: ['doc_10']
+Precision@3: 0.333
+Recall@3: 1.0
+
+Average Precision@3: 0.40
+Average Recall@3: 1.00

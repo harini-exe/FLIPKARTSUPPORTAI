@@ -1,0 +1,24 @@
+Confusion Matrix:
+             T-shirt/top  Trouser  Pullover  Dress  Coat  Sandal  Shirt  \
+T-shirt/top          841        3        13     33     4       1     97   
+Trouser                3      973         1     17     2       0      4   
+Pullover              18        1       792      6    77       0    103   
+Dress                 27       11         6    861    26       1     67   
+Coat                   2        1        37     33   839       0     88   
+Sandal                 0        0         0      0     0     962      0   
+Shirt                117        2        40     31    94       1    707   
+Sneaker                0        0         0      0     0      17      0   
+Bag                    2        0         0      3     3       3     10   
+Ankle boot             0        0         0      0     0       9      1   
+
+             Sneaker  Bag  Ankle boot  
+T-shirt/top        0    7           1  
+Trouser            0    0           0  
+Pullover           0    3           0  
+Dress              0    1           0  
+Coat               0    0           0  
+Sandal            28    2           8  
+Shirt              0    6           2  
+Sneaker          966    0          17  
+Bag                0  979           0  
+Ankle boot        50    0         940
