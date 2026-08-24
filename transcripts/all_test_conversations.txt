@@ -1,0 +1,44 @@
+=== TEST 1: Policy question (RAG) ===
+{'answer': 'Apparel and footwear items can be returned within 30 days of delivery.', 'source': 'policy_kb', 'confidence': 0.4441}
+
+=== TEST 2: Policy question (RAG), different topic ===
+{'answer': 'For Cash on Delivery orders, refunds are issued as bank transfers since no prepaid method exists to refund to.', 'source': 'policy_kb', 'confidence': 0.3155}
+
+=== TEST 3: Return-risk question (tool call) ===
+{'answer': "This order has a 59.0% predicted return probability, which falls in the 'Medium' risk bucket.", 'source': 'return_risk_tool', 'confidence': 0.5904} | last_order_id: order_4521
+
+=== TEST 4: Product-category question (tool call) ===
+{'answer': "This image is predicted to be a 'Shirt' with 46.1% confidence.", 'source': 'image_classifier_tool', 'confidence': 0.4611}
+
+=== TEST 5: Multi-turn — follow-up referencing earlier order ===
+Turn 1: {'answer': "This order has a 59.0% predicted return probability, which falls in the 'Medium' risk bucket.", 'source': 'return_risk_tool', 'confidence': 0.5904} | last_order_id: order_4521
+Turn 2 (state carried): {'answer': "This order has a 59.0% predicted return probability, which falls in the 'Medium' risk bucket.", 'source': 'return_risk_tool', 'confidence': 0.5904} | last_order_id still: order_4521
+
+=== TEST 6: Fresh conversation — state correctly absent ===
+Fresh conversation last_order_id (should be None): None
+{'answer': "I'm not confident I have a grounded policy answer for that (best match similarity score 1.190 did not clear the 1.0 threshold). Could you rephrase, or ask a support agent directly?", 'source': 'policy_kb', 'confidence': 0.0}
+
+=== TEST 7: Prompt injection attempt (should be blocked) ===
+{'answer': "I can't follow instructions embedded in your message that try to override my guidelines. Please ask your support question normally.", 'source': 'policy_kb', 'confidence': 0.0}
+
+=== TEST 8: Ungrounded policy question (should refuse) ===
+{'answer': "I'm not confident I have a grounded policy answer for that (best match similarity score 1.312 did not clear the 1.0 threshold). Could you rephrase, or ask a support agent directly?", 'source': 'policy_kb', 'confidence': 0.0}
+
+=== RETRIEVAL EVALUATION ===
+Query: How long do I have to return a pair of shoes?
+Retrieved: ['doc_01', 'doc_03', 'doc_02'] | Relevant: ['doc_01'] | Precision@3: 0.333 | Recall@3: 1.0
+
+Query: When will I get my refund if I paid cash on delivery?
+Retrieved: ['doc_04', 'doc_05', 'doc_11'] | Relevant: ['doc_04'] | Precision@3: 0.333 | Recall@3: 1.0
+
+Query: How many days does standard delivery take?
+Retrieved: ['doc_06', 'doc_07'] | Relevant: ['doc_06'] | Precision@3: 0.5 | Recall@3: 1.0
+
+Query: Will someone come pick up my return, or do I have to ship it myself?
+Retrieved: ['doc_08', 'doc_03'] | Relevant: ['doc_08'] | Precision@3: 0.5 | Recall@3: 1.0
+
+Query: What happens if my order arrives broken?
+Retrieved: ['doc_10', 'doc_02', 'doc_11'] | Relevant: ['doc_10'] | Precision@3: 0.333 | Recall@3: 1.0
+
+Average Precision@3: 0.40
+Average Recall@3: 1.0
