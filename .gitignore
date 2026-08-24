@@ -13,14 +13,8 @@ env/
 # Jupyter
 .ipynb_checkpoints/
 
-# Model files
-*.pt
-*.pth
-*.pkl
-
-# Dataset files
+# Raw FashionMNIST download
 data/FashionMNIST/raw/
-*.csv
 
 # Environment/secrets
 .env
