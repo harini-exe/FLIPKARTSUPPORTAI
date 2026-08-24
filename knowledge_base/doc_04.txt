@@ -1,0 +1,3 @@
+Title: COD Refund Timeline
+
+For Cash on Delivery orders, refunds are issued as bank transfers since no prepaid method exists to refund to. Customers must provide valid bank account details after the return is picked up. COD refunds typically take 7 to 10 business days to reflect after pickup confirmation.

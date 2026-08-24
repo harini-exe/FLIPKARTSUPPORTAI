@@ -101,7 +101,7 @@ both saved models as tools on top of a retrieval-augmented policy knowledge base
    - Adds guardrails: an input-side prompt-injection filter (blocks phrases like "ignore
      previous instructions") and an output-side groundedness check that refuses to answer
      ungrounded policy questions, printing the retrieved similarity score against the
-     0.46 threshold (Note: threshold value here refers to `SIMILARITY_THRESHOLD = 1.0`,
+     1.0 groundedness threshold (Note: threshold value here refers to `SIMILARITY_THRESHOLD = 1.0`,
      distinct from Part 1's `t*_rf`)
    - Computes Precision@3 / Recall@3 at the document level across 5 test queries
      (average Precision@3 = 0.40, average Recall@3 = 1.00)

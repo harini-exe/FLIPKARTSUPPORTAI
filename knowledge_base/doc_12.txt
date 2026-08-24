@@ -1,0 +1,3 @@
+Title: High-Risk Order Review
+
+Orders flagged as high return-risk may undergo an additional verification step before dispatch for Cash on Delivery payments. This may include a confirmation call or SMS verification before the order ships. This process is intended to reduce failed deliveries and unnecessary reverse logistics.

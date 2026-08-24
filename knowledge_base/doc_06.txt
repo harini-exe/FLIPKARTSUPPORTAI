@@ -1,0 +1,3 @@
+Title: Standard Delivery SLA
+
+Standard delivery orders are typically delivered within 4 to 7 business days depending on the destination pin code. Remote or rural pin codes may experience delivery times of up to 10 business days. Delivery estimates are shown at checkout based on the seller's location.
